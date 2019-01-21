@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html
+        xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+        data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="UTF-8">
+    <title>Megahamster</title>
+</head>
+<body>
+
+    <f:render partial="navigation"></f:render>
+
+    <f:for each="{Rooms}" as="Room">
+        <h1>{Room.name}</h1>
+        <p>Preis: {Room.price}</p>
+        <p>Info: {Room.info}</p>
+        <f:render partial="entry" arguments="{Room: Room}"></f:render>
+    </f:for>
+
+
+
+
+</body>
+</html>

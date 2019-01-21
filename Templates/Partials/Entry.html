@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html
+        xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+        data-namespace-typo3-fluid="true">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<f:if condition="{Room.sport}">
+    <f:then>
+        <h2>Eigenschaften</h2>
+        <p>Side length: {Room.side}</p>
+    </f:then>
+
+    <f:else>
+        <h2> Eigenschaften </h2>
+        <p> Width: {Room.width}</p>
+        <p> Length: {Room.length}</p>
+        <p> Height: {Room.width}</p>
+    </f:else>
+</f:if>
+
+
+</body>
+</html>

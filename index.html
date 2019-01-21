@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Megahamster</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">-->
+
+    <!--<link rel="stylesheet" href="scss/main.scss">-->
+    <style>
+
+        .card {
+            width: 400px;
+            padding: 0px !important;
+        }
+
+
+        .crop {
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        span {
+            margin: 0px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class='row' id="ergebnis">
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        fetch('http://dev.megahamster.local/index.php?format=json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (myJson) {
+                console.log(myJson);
+                console.log(JSON.stringify(myJson));
+
+                var ergebnis = "";
+                for(let aussen in myJson) {
+                    ergebnis += "<div class='card col-lg-4 col-md-6 col-sm-12 col-xs-12' >";
+                    ergebnis += "<div class='crop'><img class='card-img-top img-fluid' src='images/" + aussen + ".jpg' > </div> " +
+                        "<div class='card-body'>" +
+                            "<h5>" + aussen;
+                    for(let innen in myJson[aussen]) {
+                        if(innen == "neu" ) {
+                            console.log("innen: " + innen);
+                            console.log("aussen: " + aussen);
+                            console.log("myjson[aussen]: " + myJson[aussen]);
+                            console.log("myjson[aussen][innen]: " + myJson[aussen][innen]);
+                            console.log("test ob Objekt funcktioniert: " + myJson[aussen].preis);
+                            if(myJson[aussen][innen] == true) {
+                                ergebnis += '<span class="badge badge-secondary">New</span>';
+                            }
+                            continue;
+                        }
+                        ergebnis += "</h5>";
+                        ergebnis += "<p>" + innen + ": " + myJson[aussen][innen] + "</p>";
+                    }
+                    ergebnis += '<button type="button" class="btn btn-dark">Buy Now!</button>'
+                    ergebnis += "</div> </div>";
+                }
+
+                document.getElementById("ergebnis").innerHTML = ergebnis;
+            })
+            .catch(function (err) {
+                console.error(err);
+            })
+
+    </script>
+
+    <!--<script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootrap.js"></script>-->
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

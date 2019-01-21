@@ -1,0 +1,16 @@
+$info: #FF0000 !default; /*Überschreibt bootstrap, weil default es nicht überschreiben lässt*/
+
+@import "../node_modules/scss/bootstrap"; /*relativer Pfad*/
+$greencolor: #00FF00;
+
+.btn-dark {
+  background-color: $greencolor;
+}
+
+div {
+  p{
+    a{
+      color: orange;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "htl3r/megahamster",
+    "description": "qr in megahamster",
+    "type": "project",
+    "require": {
+        "endroid/qr-code": "^3.5",
+        "typo3fluid/fluid": "^2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "HTL3R\\Megahamster\\": "Classes/"
+        }
+    },
+    "require-dev": {
+        "typo3/fluid-schema-generator": "^2.1"
+    }
+}
