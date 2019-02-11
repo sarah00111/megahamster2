@@ -3,8 +3,9 @@
     "description": "qr in megahamster",
     "type": "project",
     "require": {
-        "endroid/qr-code": "^3.5",
-        "typo3fluid/fluid": "^2.5"
+
+        "typo3fluid/fluid": "^2.5",
+        "doctrine/dbal": "^2.9"
     },
     "autoload": {
         "psr-4": {

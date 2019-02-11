@@ -6,56 +6,25 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit07eedeaf36519eeda27e9c293cf86174
 {
-    public static $files = array (
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
-        'a9ed0d27b5a698798a89181429f162c5' => __DIR__ . '/..' . '/khanamiryan/qrcode-detector-decoder/lib/Common/customFunctions.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
-        'Z' => 
-        array (
-            'Zxing\\' => 6,
-        ),
         'T' => 
         array (
             'TYPO3\\FluidSchemaGenerator\\' => 27,
             'TYPO3Fluid\\Fluid\\' => 17,
         ),
-        'S' => 
-        array (
-            'Symfony\\Polyfill\\Ctype\\' => 23,
-            'Symfony\\Component\\PropertyAccess\\' => 33,
-            'Symfony\\Component\\OptionsResolver\\' => 34,
-            'Symfony\\Component\\Inflector\\' => 28,
-        ),
-        'M' => 
-        array (
-            'MyCLabs\\Enum\\' => 13,
-        ),
         'H' => 
         array (
             'HTL3R\\Megahamster\\' => 18,
         ),
-        'E' => 
-        array (
-            'Endroid\\QrCode\\' => 15,
-            'Endroid\\Installer\\' => 18,
-        ),
         'D' => 
         array (
-            'DASPRiD\\Enum\\' => 13,
-        ),
-        'B' => 
-        array (
-            'BaconQrCode\\' => 12,
+            'Doctrine\\DBAL\\' => 14,
+            'Doctrine\\Common\\Cache\\' => 22,
+            'Doctrine\\Common\\' => 16,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Zxing\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/khanamiryan/qrcode-detector-decoder/lib',
-        ),
         'TYPO3\\FluidSchemaGenerator\\' => 
         array (
             0 => __DIR__ . '/..' . '/typo3/fluid-schema-generator/src',
@@ -64,45 +33,21 @@ class ComposerStaticInit07eedeaf36519eeda27e9c293cf86174
         array (
             0 => __DIR__ . '/..' . '/typo3fluid/fluid/src',
         ),
-        'Symfony\\Polyfill\\Ctype\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
-        ),
-        'Symfony\\Component\\PropertyAccess\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/property-access',
-        ),
-        'Symfony\\Component\\OptionsResolver\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/options-resolver',
-        ),
-        'Symfony\\Component\\Inflector\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/inflector',
-        ),
-        'MyCLabs\\Enum\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/myclabs/php-enum/src',
-        ),
         'HTL3R\\Megahamster\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Classes',
         ),
-        'Endroid\\QrCode\\' => 
+        'Doctrine\\DBAL\\' => 
         array (
-            0 => __DIR__ . '/..' . '/endroid/qr-code/src',
+            0 => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL',
         ),
-        'Endroid\\Installer\\' => 
+        'Doctrine\\Common\\Cache\\' => 
         array (
-            0 => __DIR__ . '/..' . '/endroid/installer/src',
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
         ),
-        'DASPRiD\\Enum\\' => 
+        'Doctrine\\Common\\' => 
         array (
-            0 => __DIR__ . '/..' . '/dasprid/enum/src',
-        ),
-        'BaconQrCode\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/bacon/bacon-qr-code/src',
+            0 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
         ),
     );
 
