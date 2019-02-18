@@ -5,16 +5,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Megahamster</title>
+    <style>
+        #room {
+            margin: 0px 20px;
+            display: inline-block;
+            width: 30%;
+        }
+        #room h1 {
+            background-color: bisque;
+            color: white;
+        }
+
+
+        td {
+            text-align: justify;
+            width: 50%;
+        }
+    </style>
 </head>
 <body>
 
     <f:render partial="navigation"></f:render>
 
     <f:for each="{Rooms}" as="Room">
-        <h1>{Room.name}</h1>
-        <p>Preis: {Room.price}</p>
-        <p>Info: {Room.info}</p>
-        <f:render partial="entry" arguments="{Room: Room}"></f:render>
+        <div id="room">
+            <h1>{Room.name}</h1>
+            <table>
+                <tr>
+                    <td> <h3>Preis: </h3></td>
+                    <td> {Room.price}</td>
+                </tr>
+                <tr>
+                    <td> <h3> Info: </h3></td>
+                    <td> {Room.info}</td>
+                </tr>
+            </table>
+
+            <f:render partial="entry" arguments="{Room: Room}"></f:render>
+        </div>
+
     </f:for>
 
 

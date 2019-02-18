@@ -16,10 +16,11 @@ $paths = $view->getTemplatePaths();
 $paths->setTemplateRootPaths([__DIR__ . '/Templates/']);
 $paths->setPartialRootPaths([__DIR__ . '/Templates/Partials/']);
 
-$get = $_GET['id'];
-if(!isset($get)) {
-    $get = 'willkommen';
+
+if(!isset($_GET['id'])) {
+    $_GET['id'] = 'willkommen';
 }
+$get = $_GET['id'];
 $teile = explode("_", $get);
 if(count($teile) < 2) {
     $rooms[] = new The_Flat();
