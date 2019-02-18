@@ -20,10 +20,29 @@ class RoomProvider
         $queryBuilder = $conn->createQueryBuilder();
 
         $qry = $queryBuilder
-            ->select('name', 'price', 'info')
-            ->from('Rooms')
+            ->select('name', 'price', 'special_equipment', 'length', 'width', 'height', 'typ')
+            ->from('Rooms_1')
         ;
 
-        return $qry->execute()->fetchAll();
+        return self::makeObject($qry->execute()->fetchAll());
+    }
+
+    public static function makeObject($input) {
+        $erg = [];
+        foreach ($input as $row) {
+            switch ($row['typ']) {
+                case 'Room':
+                    $erg[] = new The_Room2($row['name'], $row['price'], $row['length'], $row['width'], $row['height'], $row['special_equipment'],false);
+                    break;
+                case 'Flat':
+                    $erg[] = new The_Flat2($row['name'], $row['price'], $row['length'], $row['width'], $row['height'], $row['special_equipment'], false);
+                    break;
+                case 'Pit':
+                    $erg[] = new The_Pit2($row['name'], $row['price'], $row['length'], $row['special_equipment'], true);
+                    break;
+            }
+
+        }
+        return $erg;
     }
 }

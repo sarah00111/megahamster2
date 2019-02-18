@@ -8,8 +8,13 @@
 
 require_once "vendor/autoload.php";
 
-use HTL3R\Megahamster\RoomProvider as RoomProvider;
+use HTL3R\Megahamster\RoomProvider;
+use HTL3R\Megahamster\The_Room2;
+use HTL3R\Megahamster\The_Pit2;
+use HTL3R\Megahamster\The_Flat2;
 
-foreach(RoomProvider::getRooms() as $row) {
-    echo "Name: " . $row['name'] . "<br>";
+/*var_dump(RoomProvider::getRooms());*/
+foreach (RoomProvider::getRooms() as $item) {
+    echo $item->outputProductInfo() . "<br>";
 }
+
